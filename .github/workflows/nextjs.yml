@@ -105,3 +105,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+        with:
+          NEXT_PUBLIC_CURRENCY_API_KEY: ${{ secrets.NEXT_PUBLIC_CURRENCY_API_KEY }}
+          NEXT_PUBLIC_CURRENCY_API: ${{ secrets.NEXT_PUBLIC_CURRENCY_API }}
