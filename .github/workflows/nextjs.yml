@@ -25,25 +25,16 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  NEXT_PUBLIC_CURRENCY_API_KEY: ${{ vars.NEXT_PUBLIC_CURRENCY_API_KEY }}
-  NEXT_PUBLIC_CURRENCY_API: ${{ vars.NEXT_PUBLIC_CURRENCY_API }}
+  NEXT_PUBLIC_CURRENCY_API_KEY: ${{ secrets.NEXT_PUBLIC_CURRENCY_API_KEY }}
+  NEXT_PUBLIC_CURRENCY_API: ${{ secrets.NEXT_PUBLIC_CURRENCY_API }}
 
 jobs:
   # Build job
   build:
-    env:
-      NEXT_PUBLIC_CURRENCY_API_KEY: ${{ vars.NEXT_PUBLIC_CURRENCY_API_KEY }}
-      NEXT_PUBLIC_CURRENCY_API: ${{ vars.NEXT_PUBLIC_CURRENCY_API }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Store variables
-        run: |
-          echo ${{ secrets.NEXT_PUBLIC_CURRENCY_API_KEY }}
-          echo "NEXT_PUBLIC_CURRENCY_API_KEY=${{ secrets.NEXT_PUBLIC_CURRENCY_API_KEY }}"
-          echo ${{ secrets.NEXT_PUBLIC_CURRENCY_API }}
-          echo "NEXT_PUBLIC_CURRENCY_API=${{ secrets.NEXT_PUBLIC_CURRENCY_API }}"
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -97,9 +88,6 @@ jobs:
 
   # Deployment job
   deploy:
-    env:
-      NEXT_PUBLIC_CURRENCY_API_KEY: ${{ vars.NEXT_PUBLIC_CURRENCY_API_KEY }}
-      NEXT_PUBLIC_CURRENCY_API: ${{ vars.NEXT_PUBLIC_CURRENCY_API }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -109,6 +97,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-        env:
-          NEXT_PUBLIC_CURRENCY_API_KEY: ${{ vars.NEXT_PUBLIC_CURRENCY_API_KEY }}
-          NEXT_PUBLIC_CURRENCY_API: ${{ vars.NEXT_PUBLIC_CURRENCY_API }}
