@@ -24,9 +24,16 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  NEXT_PUBLIC_CURRENCY_API_KEY: ${{ vars.NEXT_PUBLIC_CURRENCY_API_KEY }}
+  NEXT_PUBLIC_CURRENCY_API: ${{ vars.NEXT_PUBLIC_CURRENCY_API }}
+
 jobs:
   # Build job
   build:
+    env:
+      NEXT_PUBLIC_CURRENCY_API_KEY: ${{ vars.NEXT_PUBLIC_CURRENCY_API_KEY }}
+      NEXT_PUBLIC_CURRENCY_API: ${{ vars.NEXT_PUBLIC_CURRENCY_API }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -48,9 +55,6 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
-        env:
-          NEXT_PUBLIC_CURRENCY_API_KEY: ${{ vars.NEXT_PUBLIC_CURRENCY_API_KEY }}
-          NEXT_PUBLIC_CURRENCY_API: ${{ vars.NEXT_PUBLIC_CURRENCY_API }}
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
