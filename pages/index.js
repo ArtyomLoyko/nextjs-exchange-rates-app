@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import theme from './../utils/theme'
 import styles from '../styles/Home.module.css'
 import MainBlock from './../components/MainBlock'
+import Header from './../components/Header'
 
 const queryClient = new QueryClient()
 
@@ -12,23 +13,16 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Currency Converter & Exchange Rates App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <Header />
           <main>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <MainBlock />
-            </div>
+            <MainBlock />
           </main>
         </ThemeProvider>
       </QueryClientProvider>
@@ -41,32 +35,6 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
       `}</style>
 
