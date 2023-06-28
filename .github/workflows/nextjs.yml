@@ -87,6 +87,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+      NEXT_PUBLIC_CURRENCY_API_KEY: ${{ secrets.NEXT_PUBLIC_CURRENCY_API_KEY }}
+      NEXT_PUBLIC_CURRENCY_API: ${{ secrets.NEXT_PUBLIC_CURRENCY_API }}
     runs-on: ubuntu-latest
     needs: build
     steps:
