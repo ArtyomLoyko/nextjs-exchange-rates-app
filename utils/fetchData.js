@@ -1,5 +1,5 @@
 import Axios from 'axios'
-console.log(process.env)
+console.log(process.env.NEXT_PUBLIC_CURRENCY_API)
 const converterApi = Axios.create({
   // baseURL: `${process.env.NEXT_PUBLIC_CURRENCY_API}`,
   baseURL: 'https://api.freecurrencyapi.com/v1',
