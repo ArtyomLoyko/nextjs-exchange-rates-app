@@ -33,6 +33,9 @@ jobs:
   build:
     environment:
       name: github-pages
+    env:
+      NEXT_PUBLIC_CURRENCY_API_KEY: ${{ secrets.NEXT_PUBLIC_CURRENCY_API_KEY }}
+      NEXT_PUBLIC_CURRENCY_API: ${{ secrets.NEXT_PUBLIC_CURRENCY_API }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
