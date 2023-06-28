@@ -6,10 +6,10 @@ const Header = () => {
       sx={{
         marginTop: 5,
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'center'
       }}
     >
-      <Typography component="h1" variant="h3" textAlign={'center'}>
+      <Typography variant="h3" textAlign={'center'}>
         Currency Converter & Exchange Rates App
       </Typography>
     </Box>

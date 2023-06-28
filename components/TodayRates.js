@@ -33,7 +33,7 @@ const TodayRates = ({ currencyOne, ratesData }) => {
   )
 
   return (
-    <Card sx={{ height: '100%' }}>
+    <Card sx={{ height: '100%', backgroundColor: '#f6f6f6' }}>
       <CardHeader
         title={title}
         titleTypographyProps={{ color: 'white', fontSize: 18 }}
