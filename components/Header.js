@@ -6,7 +6,7 @@ const Header = () => {
       sx={{
         marginTop: 5,
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
       }}
     >
       <Typography variant="h3" textAlign={'center'}>

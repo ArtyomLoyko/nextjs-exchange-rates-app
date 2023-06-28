@@ -38,7 +38,7 @@ const Converter = () => {
 
   if (isLoading) return <CircularProgress />
 
-  return (    
+  return (
     <Box
       sx={{
         marginTop: 5,
@@ -49,7 +49,7 @@ const Converter = () => {
       <Container>
         <Grid container spacing={3}>
           <Grid item xs={12} md={8}>
-            <Card sx={{ height: '100%' , backgroundColor: '#f6f6f6' }} >
+            <Card sx={{ height: '100%', backgroundColor: '#f6f6f6' }}>
               <CardContent>
                 <CurrencyConverter
                   {...{

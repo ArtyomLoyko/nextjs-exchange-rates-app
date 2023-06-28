@@ -10,7 +10,7 @@ const converterApi = Axios.create({
 export const fetchRates = async (currencyOne) => {
   const { data } = await converterApi.get('/latest', {
     params: {
-      base_currency: currencyOne
+      base_currency: currencyOne,
     },
   })
 
