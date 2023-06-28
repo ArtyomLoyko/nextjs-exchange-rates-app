@@ -38,6 +38,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Store variables
+        run: |
+          echo ${{ secrets.NEXT_PUBLIC_CURRENCY_API_KEY }}
+          echo "NEXT_PUBLIC_CURRENCY_API_KEY=${{ secrets.NEXT_PUBLIC_CURRENCY_API_KEY }}"
+          echo ${{ secrets.NEXT_PUBLIC_CURRENCY_API }}
+          echo "NEXT_PUBLIC_CURRENCY_API=${{ secrets.NEXT_PUBLIC_CURRENCY_API }}"
       - name: Detect package manager
         id: detect-package-manager
         run: |
