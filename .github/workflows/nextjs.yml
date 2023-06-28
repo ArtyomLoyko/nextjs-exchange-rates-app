@@ -49,8 +49,8 @@ jobs:
             exit 1
           fi
         env:
-          NEXT_PUBLIC_CURRENCY_API_KEY: ${{ secrets.NEXT_PUBLIC_CURRENCY_API_KEY }}
-          NEXT_PUBLIC_CURRENCY_API: ${{ secrets.NEXT_PUBLIC_CURRENCY_API }}
+          NEXT_PUBLIC_CURRENCY_API_KEY: ${{ vars.NEXT_PUBLIC_CURRENCY_API_KEY }}
+          NEXT_PUBLIC_CURRENCY_API: ${{ vars.NEXT_PUBLIC_CURRENCY_API }}
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
